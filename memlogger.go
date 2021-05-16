@@ -40,6 +40,10 @@ func (l *MemLogger) Level() Level {
 
 func (l *MemLogger) SetLevel(Level) {}
 
+func (l *MemLogger) IsLevelEnabled(Level) bool {
+	return true
+}
+
 func (l *MemLogger) WriterLevel(Level) io.WriteCloser {
 	panic("not implemented yet")
 }

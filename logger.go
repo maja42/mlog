@@ -22,6 +22,9 @@ type Logger interface {
 	// Does not modify the level of parent- or sub-loggers.
 	SetLevel(level Level)
 
+	// IsLevelEnabled checks if the log level of the logger would print a message with the given level.
+	IsLevelEnabled(level Level) bool
+
 	// WriterLevel returns a new writer.
 	// All lines written to it will be logged with the given log level.
 	WriterLevel(level Level) io.WriteCloser

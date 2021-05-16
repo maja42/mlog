@@ -69,6 +69,10 @@ func (l *StdLogger) Level() Level {
 	return Level(l.rawLogger().Level)
 }
 
+func (l *StdLogger) IsLevelEnabled(level Level) bool {
+	return l.rawLogger().IsLevelEnabled(logrus.Level(level))
+}
+
 func (l *StdLogger) SetLevel(level Level) {
 	l.rawLogger().Level = logrus.Level(level)
 }

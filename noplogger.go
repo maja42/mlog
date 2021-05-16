@@ -24,6 +24,10 @@ func (nopLogger) Level() Level {
 
 func (nopLogger) SetLevel(Level) {}
 
+func (nopLogger) IsLevelEnabled(Level) bool {
+	return true
+}
+
 func (nopLogger) WriterLevel(Level) io.WriteCloser {
 	return nopCloserWriter{}
 }

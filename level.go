@@ -49,7 +49,7 @@ func (l Level) String() string {
 	return str
 }
 
-// LessSevereThan returns true of the level is less severe than onother log level.
+// LessSevereThan returns true if the level is less severe than another log level.
 func (l Level) LessSevereThan(other Level) bool {
 	return l > other
 }
