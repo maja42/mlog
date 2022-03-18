@@ -18,10 +18,12 @@ func init() {
 	}
 }
 
+// LoggerBuilder is used to create a configured logger.
 type LoggerBuilder struct {
 	logger *StdLogger
 }
 
+// NewLoggerBuilder creates a new logger builder.
 func NewLoggerBuilder(name ...string) *LoggerBuilder {
 	return &LoggerBuilder{
 		logger: NewStdLogger(name...),

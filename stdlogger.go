@@ -128,3 +128,9 @@ func (l *StdLogger) Error(args ...interface{}) {
 func (l *StdLogger) Errorf(format string, args ...interface{}) {
 	l.rawEntry.Errorf(format, args...)
 }
+
+func (l *StdLogger) AddHook(levels []Level, hook Hook) *StdLogger {
+	adapter := newLogrusHookAdapter(levels, hook)
+	l.rawLogger().AddHook(adapter)
+	return l
+}
